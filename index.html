@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title> Empleados </title>
+    <link rel="stylesheet" href="css/Styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+  </head>
+
+  <body>
+    <div class="container">
+
+      <form>
+        <div class="seccion1">
+          <div class="izq">
+            <h2>Datos Personales</h2>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" required>
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" required>
+              <option value="masculino">Masculino</option>
+              <option value="femenino">Femenino</option>
+            </select>
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento" required>
+            <label for="fechaIngreso">Fecha de Ingreso:</label>
+            <input type="date" id="fechaIngreso" required>
+          </div>
+
+          <div class="der">
+            <img src="https://w7.pngwing.com/pngs/741/68/png-transparent-user-computer-icons-user-miscellaneous-cdr-rectangle-thumbnail.png" alt="" width="200px" height="200px">
+          </div>          
+        </div>
+      
+        <div class="seccion2">
+          <h2>Salario</h2>
+          <label for="salario">Salario:</label>
+          <input type="number" id="salario" required>
+          <button type="button" id="btnModificar">Modificar</button>
+        </div>
+      
+        <div class="seccion3">
+          <h2>Cálculos</h2>
+          <button type="button" id="btnCalcularEdad">Calcular Edad</button>
+          <input type="text" id="edad" readonly>
+          <button type="button" id="btnCalcularAntiguedad">Calcular Antigüedad</button>
+          <input type="text" id="antiguedad" readonly>
+          <button type="button" id="btnCalcularPrestaciones">Calcular Prestaciones</button>
+          <input type="text" id="prestaciones" readonly>
+        </div>
+      
+        <div class="seccion4">
+          <h2>Puntos de Extensión</h2>
+          <button type="button" id="btnOpcion1">Opción 1</button>
+          <button type="button" id="btnOpcion2">Opción 2</button>
+        </div>
+      
+        <!-- <button type="submit">Enviar</button> -->
+      </form>
+
+    </div>
+    
+    
+
+
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+  </body>
+
+</html>
