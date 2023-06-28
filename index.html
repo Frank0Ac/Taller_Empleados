@@ -5,67 +5,237 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title> Empleados </title>
+    <title> Sistema de Empleados </title>
     <link rel="stylesheet" href="css/Styles.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <!-- Google Fonts Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
     <!-- MDB -->
     <link rel="stylesheet" href="css/mdb.min.css" />
   </head>
 
   <body>
-    <div class="container">
+    <div class="container-fluid">
 
-      <form>
+      <form class="formulario">
         <div class="seccion1">
           <div class="izq">
-            <h2>Datos Personales</h2>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" required>
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" required>
-            <label for="sexo">Sexo:</label>
-            <select id="sexo" required>
-              <option value="masculino">Masculino</option>
-              <option value="femenino">Femenino</option>
-            </select>
-            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fechaNacimiento" required>
-            <label for="fechaIngreso">Fecha de Ingreso:</label>
-            <input type="date" id="fechaIngreso" required>
+            <h3 class="titlePrincipio">Datos Personales</h3>
+            <hr class="linea1 my-4 bg-secondary"/>
+
+            <div class="row">
+              <div class="col-7">
+                <div class="form-outline" id="divNombre">
+                  <input type="text" id="nombreInfo" class="form-control"/>
+                  <label class="form-label" for="nombreInfo"> Nombre: </label>
+                </div>
+              </div>              
+            </div>
+
+            <div class="row">
+              <div class="col-7">
+                <div class="form-outline" id="divApellido">
+                  <input type="text" id="apellidoInfo" class="form-control" />
+                  <label class="form-label" for="apellidoInfo"> Apellido: </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="sexo"> Sexo: </label>
+              <select class="form-select" id="sexo">
+                <option value="" disabled selected> Seleccione </option>
+                <option value="masculino"> Masculino </option>
+                <option value="femenino"> Femenino </option>
+              </select>
+            </div>
+
+            <div class="row">
+              <div class="col-7">
+                <div class="form-outline" id="divNacimiento">
+                  <input type="date" id="fechaNacimiento" class="form-control" />
+                  <label class="form-label" for="fechaNacimiento"> Fecha de Nacimiento: </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-7">
+                <div class="form-outline" id="divIngreso">
+                  <input type="date" id="fechaIngreso" class="form-control" />
+                  <label class="form-label" for="fechaIngreso"> Fecha de Ingreso: </label>
+                </div>
+              </div>
+            </div>            
           </div>
 
           <div class="der">
-            <img src="https://w7.pngwing.com/pngs/741/68/png-transparent-user-computer-icons-user-miscellaneous-cdr-rectangle-thumbnail.png" alt="" width="200px" height="200px">
-          </div>          
+            <a class="ripple" >
+              <img alt="imagenUsuario" class="img-fluid rounded" src="img/usu.png" width="200px" height="200px"/>
+            </a>
+          </div>
         </div>
       
         <div class="seccion2">
-          <h2>Salario</h2>
-          <label for="salario">Salario:</label>
-          <input type="number" id="salario" required>
-          <button type="button" id="btnModificar">Modificar</button>
+          <h3 class="title">Salario</h3>
+          <hr class="linea2 my-4 bg-secondary"/>
+
+          <div id="divSalario">
+            <div class="row">
+              <div class="col-9">
+                <div class="form-outline">
+                  <input type="number" id="salario" class="form-control" placeholder="$1.500.000" readonly/>
+                  <label class="form-label" for="salario"> Salario: </label>
+                </div>
+              </div>
+            </div>          
+  
+            <button type="button" id="btnModificar" class="btn btn-secondary" data-mdb-ripple-color="#000000" onclick="modificarSalario()"> Modificar </button>
+          </div>          
         </div>
       
         <div class="seccion3">
-          <h2>Cálculos</h2>
-          <button type="button" id="btnCalcularEdad">Calcular Edad</button>
-          <input type="text" id="edad" readonly>
-          <button type="button" id="btnCalcularAntiguedad">Calcular Antigüedad</button>
-          <input type="text" id="antiguedad" readonly>
-          <button type="button" id="btnCalcularPrestaciones">Calcular Prestaciones</button>
-          <input type="text" id="prestaciones" readonly>
-        </div>
+          <h3 class="title">Cálculos</h3>
+          <hr class="linea3 my-4 bg-secondary"/>
+
+          <div class="botonesCalculos">
+            <button type="button" id="calcular_edad" class="btn btn-secondary  mx-3" data-mdb-ripple-color="#000000" onclick="calcularEdad()"> Calcular Edad </button>
+            <input type="text" id="calcEdad" hidden readonly>
+            <button type="button" id="calcular_antiguedad" class="btn btn-secondary  mx-3" data-mdb-ripple-color="#000000" onclick="calcularAntiguedad()"> Calcular Antigüedad </button>
+            <input type="text" id="calcAntiguedad" hidden readonly>
+            <button type="button" id="calcular_prestaciones" class="btn btn-secondary  mx-3" data-mdb-ripple-color="#000000" onclick="calcularPrestaciones()"> Calcular Prestaciones </button>
+            <input type="text" id="calcPrestaciones" hidden readonly>
+          </div>
+        </div>         
       
         <div class="seccion4">
-          <h2>Puntos de Extensión</h2>
-          <button type="button" id="btnOpcion1">Opción 1</button>
-          <button type="button" id="btnOpcion2">Opción 2</button>
+          <h3 class="title">Puntos de Extensión</h3>
+          <hr class="linea4 my-4 bg-secondary"/>
+          
+          <div class="divOpciones">
+            <!-- modal1 -->
+            <button type="button" class="btn btn-primary mx-5" data-mdb-toggle="modal" data-mdb-target="#modal1"
+              data-mdb-whatever="@mdo">
+              Opción 1
+            </button>          
+            <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <!-- <h5 class="modal-title" id="modal1Label">New message</h5> -->
+                    <h5 id="modal1Label"> Información Complementaria </h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                  </div>
+          
+                  <div class="modal-body">
+                    <form id="formModal1">
+                      <div class="mb-3">
+                        <label for="formacion" class="col-form-label"> Formación Académica: </label>
+                        <select class="form-select" id="nivelFormacion">
+                          <option value="" disabled selected> Seleccione </option>
+                          <option value="primaria">Primaria</option>
+                          <option value="secundaria">Secundaria</option>
+                          <option value="bachillerato">Bachillerato</option>
+                          <option value="gradoAsociado">Grado Asociado</option>
+                          <option value="licenciatura">Licenciatura</option>
+                          <option value="maestria">Maestría</option>
+                          <option value="doctorado">Doctorado</option>
+                        </select>
+                      </div>
+          
+                      <div class="mb-3">
+                        <label for="message-text" class="col-form-label"> Experiencia Laboral: </label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                      </div>
+          
+                      <div class="mb-3">
+                        <label for="estadoCivil" class="col-form-label">Estado Civil:</label>
+                        <select class="form-select" id="estadoCivil">
+                          <option value="" selected disabled> Seleccione </option>
+                          <option value="soltero">Soltero</option>
+                          <option value="casado">Casado</option>
+                          <option value="divorciado">Divorciado</option>
+                          <option value="viudo">Viudo</option>
+                        </select>
+                      </div>
+                    </form>
+                  </div>
+          
+                  <div class="modal-footer">
+                    <button type="reset" id="cerrarModal1" class="btn btn-secondary" data-mdb-dismiss="modal"
+                      onclick="closeModal1()"> Close 
+                    </button>
+                    <button type="button" id="infoComplementaria" class="btn btn-primary"
+                      onclick="verInfoComplementaria()"> Ver 
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- modal2 -->
+            <button type="button" class="btn btn-primary mx-5" data-mdb-toggle="modal" data-mdb-target="#modal2"
+              data-mdb-whatever="@fat">
+              Opción 2
+            </button>
+            <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 id="modal2Label"> Ideas y Sugerencias </h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                  </div>
+            
+                  <div class="modal-body">
+                    <form id="formModal2">
+                      <div class="mb-3">                      
+                        <label for="prioridad" class="col-form-label">Prioridad:</label>
+                        <select class="form-select" id="prioridad">
+                          <option value="" selected disabled> Seleccione </option>
+                          <option value="alta">Alta</option>
+                          <option value="media">Media</option>
+                          <option value="baja">Baja</option>
+                        </select>
+                      </div>
+            
+                      <div class="mb-3">
+                        <label class="form-label" for="typeEmail"> Correo: </label>
+                        <input type="email" id="typeEmail" class="form-control"/>                        
+                      </div>
+            
+                      <div class="mb-3">
+                        <label class="form-label" for="idea"> Idea o Sugerencia: </label>
+                        <textarea id="idea" class="form-control" name="idea" rows="3" cols="50" required></textarea>                                                
+                      </div>
+                    </form>
+                  </div>
+            
+                  <div class="modal-footer">
+                    <button type="reset" id="cerrarModal2" class="btn btn-secondary" data-mdb-dismiss="modal"
+                      onclick="closeModal2()"> Close 
+                    </button>
+                    <button type="button" id="sugerencias" class="btn btn-primary" onclick="verSugerencia()"> 
+                      Ver
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>          
+          </div>
         </div>
-      
-        <!-- <button type="submit">Enviar</button> -->
+
+        <!-- Inputs de ayuda para imprimir resultado final  -->
+        <div hidden>
+          <input type="text" id="newAcademica" hidden readonly>
+          <input type="text" id="newExperiencia" hidden readonly>
+          <input type="text" id="newCivil" hidden readonly>
+        </div>
+
+        <div class="btnVerInfoEmpleado">
+          <button type="button" class="btn btn-primary" onclick="mostrarInformacionEmpleado()"> 
+            Ver Información Empleado
+          </button>
+        </div>
+        
       </form>
 
     </div>
@@ -77,6 +247,7 @@
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
     <script type="text/javascript"></script>
+    <script src="js/Funciones.js"></script>
   </body>
 
 </html>
