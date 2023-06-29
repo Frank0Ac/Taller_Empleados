@@ -67,7 +67,7 @@ function calcularEdad() {
     let edad = Math.floor(tiempoDiferencia / (1000 * 60 * 60 * 24 * 365));
   
     // Mostrar la edad en un cuadro de alerta
-    alert("La edad del empleado es: " + edad + " años.");
+    alert("La edad del empleado es : " + edad + " años.");
 
     // Obtener el campo de entrada de la edad por su id
     let edadInput = document.getElementById("calcEdad");
@@ -94,7 +94,7 @@ function calcularAntiguedad() {
     let antiguedadRedondeada = Math.floor(antiguedadEnAnios);
   
     // Mostrar la antigüedad en un cuadro de alerta
-    alert("La antigüedad del empleado es: " + antiguedadRedondeada + " años.");
+    alert("La antigüedad del empleado es : " + antiguedadRedondeada + " años.");
 
     // Obtener el campo de entrada de la antigüedad por su id
     let antiguedadInput = document.getElementById("calcAntiguedad");
@@ -122,7 +122,7 @@ function calcularPrestaciones() {
     let prestaciones = (antiguedadEnAnios * salario) / 12;
   
     // Mostrar las prestaciones en un cuadro de alerta
-    alert("Las prestaciones a las que tiene derecho el empleado son: $" + prestaciones.toFixed(2));
+    alert("Las prestaciones a las que tiene derecho el empleado son : $" + prestaciones.toFixed(2));
 
     // Obtener el campo de entrada de las prestaciones por su id
     let prestacionesInput = document.getElementById("calcPrestaciones");
@@ -146,9 +146,9 @@ function verInfoComplementaria() {
   informacionComplementaria.push(informacion);
 
   let mensaje = "                                   Información Complementaria\n\n";
-  mensaje += "Nivel de formación: " + nivelFormacion + "\n";
-  mensaje += "Experiencia laboral: " + experienciaLaboral + "\n";
-  mensaje += "Estado civil: " + estadoCivil;
+  mensaje += "Nivel de formación : " + nivelFormacion + "\n";
+  mensaje += "Experiencia laboral : " + experienciaLaboral + "\n";
+  mensaje += "Estado civil : " + estadoCivil;
 
   alert(mensaje);
 
@@ -179,9 +179,9 @@ function verSugerencia() {
     const idea = document.getElementById("idea").value;
   
     let mensaje = "                                   Información de la Sugerencia\n\n";
-    mensaje += "Nombre: " + prioridad + "\n";
-    mensaje += "Correo: " + correo + "\n";
-    mensaje += "Idea o Sugerencia: " + idea;
+    mensaje += "Nombre : " + prioridad + "\n";
+    mensaje += "Correo : " + correo + "\n";
+    mensaje += "Idea o Sugerencia : " + idea;
   
     alert(mensaje);
     
@@ -247,4 +247,4 @@ function reiniciarFormularioGeneral() {
     document.getElementById("newPrioridad").value = "";
     document.getElementById("newCorreo").value = "";
     document.getElementById("newIdea").value = "";
-}  
+}
