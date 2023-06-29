@@ -23,7 +23,7 @@
             <hr class="linea1 my-4 bg-secondary"/>
 
             <div class="row">
-              <div class="col-7">
+              <div class="col-8">
                 <div class="form-outline" id="divNombre">
                   <input type="text" id="nombreInfo" class="form-control"/>
                   <label class="form-label" for="nombreInfo"> Nombre: </label>
@@ -32,7 +32,7 @@
             </div>
 
             <div class="row">
-              <div class="col-7">
+              <div class="col-8">
                 <div class="form-outline" id="divApellido">
                   <input type="text" id="apellidoInfo" class="form-control" />
                   <label class="form-label" for="apellidoInfo"> Apellido: </label>
@@ -50,7 +50,7 @@
             </div>
 
             <div class="row">
-              <div class="col-7">
+              <div class="col-8">
                 <div class="form-outline" id="divNacimiento">
                   <input type="date" id="fechaNacimiento" class="form-control" />
                   <label class="form-label" for="fechaNacimiento"> Fecha de Nacimiento: </label>
@@ -59,7 +59,7 @@
             </div>
 
             <div class="row">
-              <div class="col-7">
+              <div class="col-8">
                 <div class="form-outline" id="divIngreso">
                   <input type="date" id="fechaIngreso" class="form-control" />
                   <label class="form-label" for="fechaIngreso"> Fecha de Ingreso: </label>
@@ -69,10 +69,18 @@
           </div>
 
           <div class="der">
-            <a class="ripple" >
-              <img alt="imagenUsuario" class="img-fluid rounded" src="img/usu.png" width="200px" height="200px"/>
-            </a>
-          </div>
+            <div class="d-flex flex-column align-items-center mt-4" id="fotoEm">
+              <h5> Foto del Empleado </h5>
+              <img id="fotoPreview" src="" alt="Previsualización de la foto" class="img-fluid" width="150px" height="150px"/>
+            </div>
+          
+            <div class="mt-auto">
+              <div class="form-group">
+                <label for="fotoInput">Seleccionar foto:</label>
+                <input type="file" class="form-control-file" id="fotoInput">
+              </div>
+            </div>
+          </div>          
         </div>
       
         <div class="seccion2">
@@ -232,6 +240,10 @@
           <input type="text" id="newPrioridad" hidden readonly>
           <input type="text" id="newCorreo" hidden readonly>
           <input type="text" id="newIdea" hidden readonly>
+        </div>
+
+        <div class="btnReiniciarFormularioGeneral">
+          <button type="button" class="btn btn-danger" onclick="reiniciarFormularioGeneral()"> Reiniciar Formulario </button>
         </div>
 
         <div class="btnVerInfoEmpleado">

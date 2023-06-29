@@ -167,7 +167,9 @@ function reiniciarFormulario() {
 }
 
 function closeModal1() {
-    document.getElementById("formModal1").reset();
+    document.getElementById("nivelFormacion").selectedIndex = 0;
+    document.getElementById("message-text").value = "";
+    document.getElementById("estadoCivil").selectedIndex = 0;
 }
 
 // Opción2
@@ -192,5 +194,57 @@ function verSugerencia() {
 }
 
 function closeModal2() {
-    document.getElementById("formModal2").reset();
+    document.getElementById("prioridad").selectedIndex = 0;
+    document.getElementById("typeEmail").value = "";
+    document.getElementById("idea").value = "";
 }
+
+// Obtener referencia al input de carga de foto
+const fotoInput = document.getElementById('fotoInput');
+// Obtener referencia a la imagen de previsualización
+const fotoPreview = document.getElementById('fotoPreview');
+
+// Escuchar el evento de cambio en el input de carga de foto
+fotoInput.addEventListener('change', function(event) {
+    const file = event.target.files[0]; // Obtener el archivo seleccionado por el usuario
+
+    if (file) {
+        const reader = new FileReader(); // Crear un objeto FileReader
+
+        // Configurar el evento load del FileReader para mostrar la foto seleccionada
+        reader.addEventListener('load', function() {
+        fotoPreview.src = reader.result; // Mostrar la foto cargada en el elemento <img>
+        });
+
+        reader.readAsDataURL(file); // Leer el contenido del archivo como una URL de datos
+    }
+});
+
+function reiniciarFormularioGeneral() {
+    // Restablecer los valores de los campos del formulario
+    document.getElementById("nombreInfo").value = "";
+    document.getElementById("apellidoInfo").value = "";
+    document.getElementById("sexo").selectedIndex = 0;
+    document.getElementById("fechaNacimiento").value = "";
+    document.getElementById("fechaIngreso").value = "";
+    document.getElementById("fotoPreview").src = "";
+    document.getElementById("fotoInput").value = "";
+    document.getElementById("salario").value = "";
+    document.getElementById("calcEdad").value = "";
+    document.getElementById("calcAntiguedad").value = "";
+    document.getElementById("calcPrestaciones").value = "";
+    document.getElementById("nivelFormacion").selectedIndex = 0;
+    document.getElementById("message-text").value = "";
+    document.getElementById("estadoCivil").selectedIndex = 0;
+    document.getElementById("prioridad").selectedIndex = 0;
+    document.getElementById("typeEmail").value = "";
+    document.getElementById("idea").value = "";
+  
+    // Restablecer los valores ocultos
+    document.getElementById("newAcademica").value = "";
+    document.getElementById("newExperiencia").value = "";
+    document.getElementById("newCivil").value = "";
+    document.getElementById("newPrioridad").value = "";
+    document.getElementById("newCorreo").value = "";
+    document.getElementById("newIdea").value = "";
+}  
